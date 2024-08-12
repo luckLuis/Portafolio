@@ -8,9 +8,11 @@ const Footer = () => {
       <Container>
         <Row>
           <Col className="text-center">
-            <p>&copy; 2024 Tu Nombre. Todos los derechos reservados.</p>
+            <p>
+              &copy; 2024 Luis Antonio Jacome. Todos los derechos reservados.
+            </p>
             <div className="d-flex justify-content-center mt-3">
-              <a
+              {/* <a
                 href="https://facebook.com"
                 className="text-light mx-2"
                 aria-label="Facebook"
@@ -23,9 +25,9 @@ const Footer = () => {
                 aria-label="Twitter"
               >
                 <FaTwitter size={24} />
-              </a>
+              </a> */}
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/luis-antonio-jacome-334b7219a/"
                 className="text-light mx-2"
                 aria-label="LinkedIn"
               >
