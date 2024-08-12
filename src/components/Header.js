@@ -1,33 +1,48 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import { motion } from "framer-motion";
+import "../../src/Header.css"; // Asegúrate de crear este archivo para los estilos
 
 function Header() {
+  const location = useLocation(); // Hook para obtener la ruta actual
+
+  const navItems = [
+    { name: "Inicio", path: "/" },
+    // { name: "Sobre mí", path: "/sobre-mi" },
+    { name: "Habilidades", path: "/habilidades" },
+    // { name: "Proyectos", path: "/proyectos" },
+    { name: "Contacto", path: "/contacto" },
+  ];
+
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg" className="shadow-sm">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/" className="fw-bold">
           Mi Sitio Web
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            {" "}
-            <Nav.Link as={Link} to="/">
-              Inicio
-            </Nav.Link>
-            <Nav.Link as={Link} to="/about">
-              Sobre mí
-            </Nav.Link>
-            <Nav.Link as={Link} to="/skills">
-              Habilidades
-            </Nav.Link>
-            <Nav.Link as={Link} to="/projects">
-              Proyectos
-            </Nav.Link>
-            <Nav.Link as={Link} to="/contact">
-              Contacto
-            </Nav.Link>
+            {navItems.map((item, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="mx-2"
+              >
+                <Nav.Link
+                  as={Link}
+                  to={item.path}
+                  className={`text-white fw-semibold ${
+                    location.pathname === item.path ? "active-link" : ""
+                  }`}
+                >
+                  {item.name}
+                </Nav.Link>
+              </motion.div>
+            ))}
           </Nav>
         </Navbar.Collapse>
       </Container>

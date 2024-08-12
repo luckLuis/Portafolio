@@ -1,0 +1,4 @@
+.active-link {
+  border-bottom: 2px solid #10cbef; /* Línea de subrayado azul para indicar el enlace activo */
+  padding-bottom: 0.5rem; /* Espaciado adicional para el subrayado */
+}
