@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Container, Form, Button } from "react-bootstrap";
+import { Container, Form } from "react-bootstrap";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,50 +26,66 @@ const Contact = () => {
   };
 
   return (
-    <Container className="my-5">
-      <h2 className="mb-4">Contáctame</h2>
-      <Form onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label htmlFor="name">Nombre</Form.Label>
-          <Form.Control
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Nombre"
-            value={name}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label htmlFor="email">Email</Form.Label>
-          <Form.Control
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            value={email}
-            onChange={handleChange}
-            required
-          />
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label htmlFor="message">Mensaje</Form.Label>
-          <Form.Control
-            as="textarea"
-            id="message"
-            name="message"
-            placeholder="Mensaje"
-            value={message}
-            onChange={handleChange}
-            rows={4}
-            required
-          />
-        </Form.Group>
-        <Button type="submit" variant="primary">
-          Enviar
-        </Button>
-      </Form>
+    <Container className="my-5 px-4">
+      <h2 className="text-center mb-4 text-primary">Contáctame</h2>
+      <motion.div
+        className="p-4 bg-light rounded shadow-sm"
+        whileHover={{ scale: 1.02 }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <Form onSubmit={handleSubmit}>
+          <Form.Group className="mb-3">
+            <Form.Label htmlFor="name">Nombre</Form.Label>
+            <Form.Control
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ingresa tu nombre"
+              value={name}
+              onChange={handleChange}
+              required
+              className="border-primary"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label htmlFor="email">Email</Form.Label>
+            <Form.Control
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ingresa tu email"
+              value={email}
+              onChange={handleChange}
+              required
+              className="border-primary"
+            />
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label htmlFor="message">Mensaje</Form.Label>
+            <Form.Control
+              as="textarea"
+              id="message"
+              name="message"
+              placeholder="Escribe tu mensaje aquí"
+              value={message}
+              onChange={handleChange}
+              rows={4}
+              required
+              className="border-primary"
+            />
+          </Form.Group>
+          <div className="text-center">
+            <motion.button
+              type="submit"
+              className="btn btn-primary rounded-pill px-4 py-2"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              Enviar
+            </motion.button>
+          </div>
+        </Form>
+      </motion.div>
     </Container>
   );
 };

@@ -2,10 +2,10 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { motion } from "framer-motion";
-import "../../src/Header.css"; // Asegúrate de crear este archivo para los estilos
+import "../../src/Header.css";
 
 function Header() {
-  const location = useLocation(); // Hook para obtener la ruta actual
+  const location = useLocation();
 
   const navItems = [
     { name: "Inicio", path: "/" },
