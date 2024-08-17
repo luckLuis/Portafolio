@@ -1,18 +1,19 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faCode, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import "../../src/Header.css";
 
 function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
-    { name: "Inicio", path: "/" },
-    // { name: "Sobre mí", path: "/sobre-mi" },
-    { name: "Habilidades", path: "/habilidades" },
-    // { name: "Proyectos", path: "/proyectos" },
-    { name: "Contacto", path: "/contacto" },
+    { name: "Inicio", path: "/", icon: faHome },
+    { name: "Habilidades", path: "/habilidades", icon: faCode },
+    { name: "Contacto", path: "/contacto", icon: faEnvelope },
   ];
 
   return (
@@ -33,12 +34,12 @@ function Header() {
                 className="mx-2"
               >
                 <Nav.Link
-                  as={Link}
-                  to={item.path}
+                  onClick={() => navigate(item.path)}
                   className={`text-white fw-semibold ${
                     location.pathname === item.path ? "active-link" : ""
                   }`}
                 >
+                  <FontAwesomeIcon icon={item.icon} className="me-2" />
                   {item.name}
                 </Nav.Link>
               </motion.div>

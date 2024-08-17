@@ -3,25 +3,33 @@ import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import profileImage from "../yo.jpg";
 import { FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
+import "../../src/Home.css";
+
+const InfoCard = ({ title, text }) => (
+  <motion.div
+    className="d-inline-block border rounded-lg shadow-sm card-section"
+    whileHover={{ scale: 1.1 }}
+    transition={{ type: "spring", stiffness: 300 }}
+  >
+    <h4 className="card-title mb-3">{title}</h4>
+    <p className="card-text">{text}</p>
+  </motion.div>
+);
 
 const Home = () => {
   return (
-    <Container fluid className="my-5 px-4">
+    <Container fluid className="my-5 px-4 container-custom">
       <Row className="align-items-center justify-content-center text-center">
         <Col md={5} className="mb-4 d-flex justify-content-center">
           <motion.div
             whileHover={{ scale: 1.05, rotate: 5 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <Card
-              className="border-0 shadow-lg rounded-circle"
-              style={{ maxWidth: "250px", border: "4px solid #e0e0e0" }}
-            >
+            <Card className="border-0 shadow-lg rounded-circle profile-card">
               <Card.Img
                 src={profileImage}
                 alt="Perfil"
-                className="img-fluid rounded-circle"
-                style={{ border: "4px solid #e0e0e0" }}
+                className="img-fluid rounded-circle profile-img"
               />
             </Card>
           </motion.div>
@@ -59,7 +67,6 @@ const Home = () => {
               size="lg"
               href="/contacto"
               className="rounded-pill shadow-sm"
-              style={{ fontWeight: "600", padding: "0.75rem 1.5rem" }}
             >
               Contáctame <FaArrowRight className="ms-2" />
             </Button>
@@ -67,43 +74,19 @@ const Home = () => {
         </Col>
       </Row>
       <Row className="text-center mt-5">
-        <Col>
-          <motion.div
-            className="d-inline-block p-4 border rounded-lg shadow-sm"
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            style={{ maxWidth: "300px" }}
-          >
-            <h4 className="text-primary mb-3">Diseño Moderno</h4>
-            <p className="text-muted">
-              Implemento las últimas tendencias en diseño web para asegurar una
-              experiencia visualmente atractiva.
-            </p>
-          </motion.div>
-          <motion.div
-            className="d-inline-block p-4 border rounded-lg shadow-sm ms-4"
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            style={{ maxWidth: "300px" }}
-          >
-            <h4 className="text-primary mb-3">Performance Óptima</h4>
-            <p className="text-muted">
-              Optimizo cada aspecto de la aplicación para ofrecer un rendimiento
-              excepcional en todos los dispositivos.
-            </p>
-          </motion.div>
-          <motion.div
-            className="d-inline-block p-4 border rounded-lg shadow-sm ms-4"
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
-            style={{ maxWidth: "300px" }}
-          >
-            <h4 className="text-primary mb-3">Experiencia Interactiva</h4>
-            <p className="text-muted">
-              Creo interfaces de usuario dinámicas que facilitan la interacción
-              fluida y agradable.
-            </p>
-          </motion.div>
+        <Col className="d-flex justify-content-center flex-wrap">
+          <InfoCard
+            title="Diseño Moderno"
+            text="Implemento las últimas tendencias en diseño web para asegurar una experiencia visualmente atractiva."
+          />
+          <InfoCard
+            title="Performance Óptima"
+            text="Optimizo cada aspecto de la aplicación para ofrecer un rendimiento excepcional en todos los dispositivos."
+          />
+          <InfoCard
+            title="Experiencia Interactiva"
+            text="Creo interfaces de usuario dinámicas que facilitan la interacción fluida y agradable."
+          />
         </Col>
       </Row>
     </Container>

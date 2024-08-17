@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
+import "../../src/Footer.css";
 
 const Footer = () => {
   return (
@@ -12,26 +13,19 @@ const Footer = () => {
               &copy; 2024 Luis Antonio Jacome. Todos los derechos reservados.
             </p>
             <div className="d-flex justify-content-center mt-3">
-              {/* <a
-                href="https://facebook.com"
-                className="text-light mx-2"
-                aria-label="Facebook"
-              >
-                <FaFacebook size={24} />
-              </a>
-              <a
-                href="https://twitter.com"
-                className="text-light mx-2"
-                aria-label="Twitter"
-              >
-                <FaTwitter size={24} />
-              </a> */}
               <a
                 href="https://www.linkedin.com/in/luis-antonio-jacome-334b7219a/"
-                className="text-light mx-2"
+                className="social-icon"
                 aria-label="LinkedIn"
               >
                 <FaLinkedin size={24} />
+              </a>
+              <a
+                href="https://github.com/luckLuis"
+                className="social-icon ms-3"
+                aria-label="GitHub"
+              >
+                <FaGithub size={24} />
               </a>
             </div>
           </Col>

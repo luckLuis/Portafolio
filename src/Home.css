@@ -1,0 +1,34 @@
+/* Home.css */
+
+.container-custom {
+  cursor: pointer;
+}
+
+.profile-card {
+  max-width: 250px;
+  border: 4px solid #e0e0e0;
+}
+
+.profile-img {
+  border: 4px solid #e0e0e0;
+}
+
+.card-section {
+  max-width: 300px; /* Asegura un ancho máximo consistente */
+  height: 200px; /* Fija una altura para uniformidad */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.card-title {
+  color: #007bff; /* Cambia esto según tu color primario */
+}
+
+.card-text {
+  color: #6c757d; /* Cambia esto según tu color secundario */
+}

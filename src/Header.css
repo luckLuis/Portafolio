@@ -1,4 +1,52 @@
+/* Estilo para el enlace activo */
 .active-link {
   border-bottom: 2px solid #10cbef;
   padding-bottom: 0.5rem;
+  color: #00ffb3 !important; /* Color de texto para el enlace activo */
+}
+
+/* Estilo para el nombre del sitio en la barra de navegación */
+.navbar-dark .navbar-brand {
+  font-size: 1.5rem;
+  color: #10cbef;
+  transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+/* Estilo para el nombre del sitio cuando se pasa el cursor sobre él */
+.navbar-dark .navbar-brand:hover {
+  color: #00ffb3;
+}
+
+/* Estilo para los enlaces de navegación */
+.navbar-dark .nav-link {
+  font-size: 1.2rem;
+  color: #ffffff; /* Color de texto por defecto */
+  transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para el color y la transformación */
+  display: inline-flex; /* Asegura que el contenido se alinee correctamente con los íconos */
+  align-items: center; /* Alinea verticalmente los íconos y el texto */
+  text-decoration: none; /* Asegura que no haya subrayado en el texto */
+}
+
+/* Estilo para los enlaces de navegación cuando se pasa el cursor sobre ellos */
+.navbar-dark .nav-link:hover {
+  color: #00ffb3;
+  transform: scale(1.1); /* Escala el enlace al pasar el cursor */
+}
+
+/* Estilo para los íconos */
+.fa-icon {
+  transition: transform 0.3s ease; /* Transición suave para la transformación */
+  color: inherit; /* Hereda el color del texto del enlace */
+}
+
+/* Estilo para los íconos cuando se pasa el cursor sobre ellos */
+.fa-icon:hover {
+  transform: rotate(20deg); /* Rota el ícono cuando se pasa el cursor */
+  color: #00ffb3; /* Cambia el color del ícono al pasar el cursor */
+}
+
+/* Asegura que no haya contenido inesperado */
+body::after,
+body::before {
+  content: none;
 }

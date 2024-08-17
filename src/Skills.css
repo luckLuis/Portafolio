@@ -1,0 +1,19 @@
+/* Skills.css */
+
+.skill-card {
+  background-color: #ffffff; /* Color de fondo de las cards */
+  border: 1px solid #e0e0e0; /* Color del borde de las cards */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 1.5rem; /* Espaciado interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra de las cards */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.skill-card:hover {
+  background-color: #f0f0f0; /* Color de fondo al pasar el ratón */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al pasar el ratón */
+}
+
+.skill-card .text-primary {
+  color: #007bff; /* Color de los íconos */
+}

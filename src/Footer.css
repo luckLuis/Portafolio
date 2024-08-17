@@ -1,0 +1,14 @@
+.footer {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+.social-icon {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #007bff;
+}
