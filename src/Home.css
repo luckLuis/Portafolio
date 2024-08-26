@@ -1,34 +1,58 @@
-/* Home.css */
-
 .container-custom {
-  cursor: pointer;
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 .profile-card {
-  max-width: 250px;
-  border: 4px solid #e0e0e0;
+  width: 220px;
+  height: 220px;
+  background-color: #ffffff;
+  border: none;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .profile-img {
-  border: 4px solid #e0e0e0;
+  object-fit: cover;
 }
 
 .card-section {
-  max-width: 300px; /* Asegura un ancho máximo consistente */
-  height: 200px; /* Fija una altura para uniformidad */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-  box-sizing: border-box;
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-title {
-  color: #007bff; /* Cambia esto según tu color primario */
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #343a40;
 }
 
 .card-text {
-  color: #6c757d; /* Cambia esto según tu color secundario */
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.text-dark {
+  color: #343a40 !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #ffffff;
 }

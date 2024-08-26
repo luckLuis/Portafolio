@@ -7,8 +7,8 @@ import "../../src/Home.css";
 
 const InfoCard = ({ title, text }) => (
   <motion.div
-    className="d-inline-block border rounded-lg shadow-sm card-section"
-    whileHover={{ scale: 1.1 }}
+    className="card-section border-0 shadow-sm"
+    whileHover={{ scale: 1.05 }}
     transition={{ type: "spring", stiffness: 300 }}
   >
     <h4 className="card-title mb-3">{title}</h4>
@@ -18,14 +18,14 @@ const InfoCard = ({ title, text }) => (
 
 const Home = () => {
   return (
-    <Container fluid className="my-5 px-4 container-custom">
+    <Container fluid className="my-5 py-5 container-custom">
       <Row className="align-items-center justify-content-center text-center">
         <Col md={5} className="mb-4 d-flex justify-content-center">
           <motion.div
             whileHover={{ scale: 1.05, rotate: 5 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <Card className="border-0 shadow-lg rounded-circle profile-card">
+            <Card className="border-0 shadow-sm profile-card">
               <Card.Img
                 src={profileImage}
                 alt="Perfil"
@@ -36,8 +36,7 @@ const Home = () => {
         </Col>
         <Col md={7}>
           <motion.h1
-            className="display-3 mb-4 font-weight-bold text-primary"
-            style={{ lineHeight: "1.2" }}
+            className="display-4 mb-3 font-weight-bold text-dark"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, type: "spring", stiffness: 300 }}
@@ -45,28 +44,26 @@ const Home = () => {
             Bienvenido a mi Portafolio
           </motion.h1>
           <motion.p
-            className="lead mb-4 text-secondary"
+            className="lead mb-4 text-muted"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Soy un desarrollador front-end con experiencia en React, Angular, y
-            TypeScript. Me especializo en crear interfaces de usuario elegantes
-            y funcionales, transformando diseños complejos en aplicaciones web
-            interactivas con un enfoque en la experiencia del usuario y el
-            diseño responsivo.
+            Soy un desarrollador front-end especializado en React, Angular y
+            TypeScript. Transformo diseños complejos en aplicaciones web
+            funcionales, priorizando la experiencia del usuario y el diseño
+            responsivo.
           </motion.p>
           <motion.div
-            className="text-center"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
             <Button
-              variant="primary"
+              variant="outline-primary"
               size="lg"
               href="/contacto"
-              className="rounded-pill shadow-sm"
+              className="rounded-pill px-4"
             >
               Contáctame <FaArrowRight className="ms-2" />
             </Button>
@@ -74,15 +71,19 @@ const Home = () => {
         </Col>
       </Row>
       <Row className="text-center mt-5">
-        <Col className="d-flex justify-content-center flex-wrap">
+        <Col md={4}>
           <InfoCard
             title="Diseño Moderno"
             text="Implemento las últimas tendencias en diseño web para asegurar una experiencia visualmente atractiva."
           />
+        </Col>
+        <Col md={4}>
           <InfoCard
             title="Performance Óptima"
             text="Optimizo cada aspecto de la aplicación para ofrecer un rendimiento excepcional en todos los dispositivos."
           />
+        </Col>
+        <Col md={4}>
           <InfoCard
             title="Experiencia Interactiva"
             text="Creo interfaces de usuario dinámicas que facilitan la interacción fluida y agradable."
